@@ -41,7 +41,7 @@ angular
               }
           }, function(err)
           {
-              $window.alert("Your request to the end-point failed" + err.data);
+              $window.alert("Your request to the end-point failed with status code " + err.statusText);
           })
        };
  }])
