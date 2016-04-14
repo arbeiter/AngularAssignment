@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Lol</title>
+    <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css'>
+<link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.0-rc2/docs.css'>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div ng-controller="MyController" layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" ng-app="MyApp">
+  <form name="projectForm">
+    <md-content layout-gt-sm="column" layout-padding>
+      <md-input-container>
+        <label>First Name</label>
+        <input ng-model="user.firstName" name="firstName" required/>
+        <div ng-messages="projectForm.firstName.$error">
+            <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Last Name</label>
+        <input ng-model="user.lastName" name="lastName" required/>
+        <div ng-messages="projectForm.lastName.$error">
+            <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Email Address</label>
+        <input ng-model="user.emailAddress" required 
+               minlength="7" maxlength="100" ng-pattern="/^.+@.+\..+$/" 
+               name="emailAddress"/>
+          <div ng-messages="projectForm.emailAddress.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Business Name</label>
+        <input ng-model="user.businessName" name="businessName" required/>
+            <div ng-messages="projectForm.businessName.$error"  role="alert">
+              <div ng-message="required">
+                This is required.
+              </div>
+         </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Phone Number</label>
+        <input ng-model="user.phoneNumber"   name="phoneNumber" 
+        required>
+            <div ng-messages="projectForm.phoneNumber.$error">
+              <div ng-message="required">
+                This is required.
+              </div>
+           </div>
+     </md-input-container>
+      <md-input-container>
+        <label>Year Started</label>
+        <input ng-model="user.yearStarted" 
+               type="number"
+               name="yearStarted" 
+               required/>
+            <div ng-messages="projectForm.yearStarted.$error">
+              <div ng-message="required">
+                This is required.
+              </div>
+           </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Estimated FICO</label>
+        <input ng-model="user.estimatedFICO" 
+               name="userFico" 
+               type="number"
+               required>
+            <div ng-messages="projectForm.userFico.$error">
+              <div ng-message="required">
+                This is required.
+              </div>
+           </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Estimated Annual Revenue</label>
+        <input ng-model="user.estimatedAnnualRevenue" 
+               type="number"
+               required>
+            <div ng-messages="projectForm.estimatedAnnualRevenue.$error">
+              <div ng-message="required">
+                This is required.
+              </div>
+           </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Gross estimate from cards</label>
+        <input ng-model="user.grossPercentageFromCards" 
+               type="number"
+               required>
+            <div ng-messages="projectForm.grossPercentageFromCards.$error">
+              <div ng-message="required">
+                Gross estimate is required.
+              </div>
+           </div>
+      </md-input-container>
+      <md-input-container md-theme="docs-dark" flex-gt-sm>
+        <label>Business Type</label>
+        <md-select ng-model="user.typeOfBusiness">
+          <md-option ng-repeat="business in businessTypes" value="{{business}}" required>
+            {{business}}
+          </md-option>
+        </md-select>
+      </md-input-container> 
+    </md-content>
+    <md-button flex class="md-raised md-primary"
+               form = "projectForm"
+               ng-disabled="projectForm.$invalid || projectForm.$pending" 
+               ng-click="submit()">Register</md-button>
+    <md-button flex class="md-raised md-primary"
+               form = "projectForm"
+               ng-show="applyEnabled" ng-click="apply()">Apply Now!</md-button>
+  </form>
+</div>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.4.8/angular-messages.min.js'></script>
+        <script src="js/index.js"></script>
+  </body>
+</html>
