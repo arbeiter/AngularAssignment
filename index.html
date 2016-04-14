@@ -29,7 +29,7 @@
       <md-input-container>
         <label>Email Address</label>
         <input ng-model="user.emailAddress" required 
-               minlength="7" maxlength="100" ng-pattern="/^.+@.+\..+$/" 
+               minlength="6" maxlength="100" ng-pattern="/^.+@.+\..+$/" 
                name="emailAddress"/>
           <div ng-messages="projectForm.emailAddress.$error" role="alert">
           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
@@ -73,6 +73,7 @@
         <input ng-model="user.estimatedFICO" 
                name="userFico" 
                type="number"
+               min="0" max="100"
                required>
             <div ng-messages="projectForm.userFico.$error">
               <div ng-message="required">
