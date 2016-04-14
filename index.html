@@ -93,9 +93,10 @@
            </div>
       </md-input-container>
       <md-input-container>
-        <label>Gross estimate from cards</label>
+        <label>Gross estimate from cards(in %ge)</label>
         <input ng-model="user.grossPercentageFromCards" 
                type="number"
+               min="0" max="100"
                required>
             <div ng-messages="projectForm.grossPercentageFromCards.$error">
               <div ng-message="required">
